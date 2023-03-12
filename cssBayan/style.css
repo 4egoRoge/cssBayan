@@ -1,0 +1,81 @@
+.bayan_container {
+    width: 400px;
+    margin: 10px auto 30px auto;
+    text-align: left;
+}
+
+.bayan_container label {
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: black;
+    line-height: 33px;
+    font-size: 19px;
+    background: #ffffff;
+    border: 1px solid black
+}
+
+.bayan_container label:hover {
+    background: #fffb00;
+}
+
+.bayan_container input:checked+label,
+.bayan_container input:checked+label:hover {
+    background: #fffb00;
+    color: black;
+}
+
+.bayan_container label:hover:after,
+.bayan_container input:checked+label:hover:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    background: transparent url(img/arrow_down.png) no-repeat center center;
+}
+
+.bayan_container input:checked+label:hover:after {
+    background-image: url(img/arrow_up.png);
+}
+
+.bayan_container input {
+    display: none;
+}
+
+.bayan_container article {
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    z-index: 10;
+}
+
+.bayan_container article p {
+    font-style: italic;
+    color: #777;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.bayan_container input:checked~article {
+    transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+}
+
+.bayan_container input:checked~article.bayan_content {
+    height: 140px;
+    border: 1px solid black;
+}
+
+.bayan_container input:hover~article.bayan_content {
+    height: 140px;
+    border: 1px solid black;
+    transition: 1s ease-in-out, box-shadow 0.1s linear;
+}
